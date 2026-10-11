@@ -1,0 +1,24 @@
+name: TropicRTP
+version: '${version}'
+main: com.tropicworld.rtp.TropicRTP
+api-version: '26.3'
+description: Случайная телепортация с меню для Tropic World
+softdepend: [LuckPerms]
+commands:
+  rtp:
+    description: Меню случайной телепортации
+    usage: /rtp
+    aliases: [randomtp, wild]
+permissions:
+  tropicrtp.use:
+    description: Открывать меню /rtp и использовать базовый вариант
+    default: true
+  tropicrtp.menu.all:
+    description: Доступ ко всем вариантам меню (в обход групп)
+    default: op
+  tropicrtp.bypass:
+    description: Обходить кулдаун
+    default: op
+  tropicrtp.admin:
+    description: Перезагрузка конфигурации (/rtp reload)
+    default: op

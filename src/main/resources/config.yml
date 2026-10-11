@@ -1,0 +1,69 @@
+# Градиентный префикс Tropic World (формат MiniMessage)
+prefix: "<gradient:#00F5A0:#00B4FF><bold>Tropic World</bold></gradient> <dark_gray>»</dark_gray>"
+
+# Миры, где разрешён /rtp
+worlds:
+  - world
+  - world_nether
+
+# Сколько раз пробовать найти безопасное место
+max-attempts: 15
+
+cooldown:
+  # Кулдаун в секундах после телепортации (общий для всех вариантов)
+  default: 30
+  # Необязательно: свой кулдаун для групп LuckPerms (берётся наименьший).
+  # groups:
+  #   vip: 15
+  groups: {}
+
+menu:
+  title: "<gradient:#00F5A0:#00B4FF><bold>Tropic World</bold></gradient> <dark_gray>» Телепортация</dark_gray>"
+  rows: 3
+  filler: GRAY_STAINED_GLASS_PANE
+
+# Варианты меню.
+# mode:   RANDOM  — случайная точка;  PLAYERS — рядом со случайным игроком
+# center: PLAYER  — отсчёт от вашей позиции;  WORLD — от центра мира (только для RANDOM)
+# permission: право для доступа. Группа LuckPerms "tropic" = право group.tropic
+options:
+  near:
+    slot: 11
+    material: OAK_LEAVES
+    name: "<gradient:#7CFC00:#32CD32><bold>Ближний RTP</bold></gradient>"
+    lore:
+      - "<gray>Случайная точка рядом с вами.</gray>"
+      - "<gray>Дистанция: <white><min>–<max></white> блоков</gray>"
+    mode: RANDOM
+    center: PLAYER
+    min: 0
+    max: 250
+    permission: tropicrtp.use
+
+  players:
+    slot: 13
+    material: CHERRY_LEAVES
+    name: "<gradient:#FFB7C5:#FF69B4><bold>К игрокам</bold></gradient>"
+    lore:
+      - "<gray>Вы появитесь неподалёку от</gray>"
+      - "<gray>случайного игрока на сервере.</gray>"
+      - "<gray>Дистанция: <white><min>–<max></white> блоков</gray>"
+    mode: PLAYERS
+    center: PLAYER
+    min: 300
+    max: 500
+    permission: group.tropic
+
+  far:
+    slot: 15
+    material: DARK_OAK_LEAVES
+    name: "<gradient:#1E8449:#27AE60><bold>Дальний RTP</bold></gradient>"
+    lore:
+      - "<gray>Далёкая случайная точка</gray>"
+      - "<gray>от центра мира.</gray>"
+      - "<gray>Дистанция: <white><min>–<max></white> блоков</gray>"
+    mode: RANDOM
+    center: WORLD
+    min: 1000
+    max: 50000
+    permission: group.tropic
